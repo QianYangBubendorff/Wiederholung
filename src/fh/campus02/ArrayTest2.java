@@ -1,5 +1,8 @@
 package fh.campus02;
 
+
+import java.util.Arrays;
+
 public class ArrayTest2 {
     public static void main(String[] args) {
 //        for loop to print a string array.
@@ -20,10 +23,12 @@ public class ArrayTest2 {
                 System.out.print(smartphoneVerkaufszahlen[sIndex][qIndex] + " ");
             }
 //            a line break after each printed line.
-            System.out.println();
+
         }
 
         System.out.println(verkaufteAnzahlJahr(smartphoneVerkaufszahlen, 2));
+        System.out.println();
+        System.out.println(Arrays.toString(smartphoneHighestSale(smartphoneVerkaufszahlen,smartphoneNamen)));
     }
 
     //    the following method should return the annual sales of each smartphone model. Sales numbers are based on the double dimensional array. The index of the phone based on the array of smartphone name
@@ -41,31 +46,30 @@ public class ArrayTest2 {
         return sum;
     }
 
+
+//      return 0; // todo: druch korrekten Coden bitte ersetzen.
+
+    //    die folgende Method soll uns den Namen des Smartphones liefern, das in einem bestimmten Quartal am erfolgreichsten war
+//    zahlen: unser verkaufzahlen
+//    namen: unser verkaufszahlen
+//    quartalNr: für welches Quartal soll berechnet werden(zweischen 1 und 4) - sonst Rückgabwert leerer String
+//    return ""; // todo: druch korrekten Coden ersetzen
+    public static String[] smartphoneHighestSale(int[][] zahlen, String[] phone) {
+        int[] max = new int[phone.length];
+        String[] maxPhone = new String[zahlen[0].length];
+        for (int j = 0; j < zahlen[j].length; j++) {
+            for (int i = 0; i < phone.length; i++) {
+                if (zahlen[i][j] > max[j]) {
+                    max[j] = zahlen[i][j];
+                    maxPhone[j] = phone[i];
+                }
+
+            }
+
+
+        }
+        return maxPhone;
+    }
 }
-////      return 0; // todo: druch korrekten Coden bitte ersetzen.
-//
-////    die folgende Method soll uns den Namen des Smartphones liefern, das in einem bestimmten Quartal am erfolgreichsten war
-////    zahlen: unser verkaufzahlen
-////    namen: unser verkaufszahlen
-////    quartalNr: für welches Quartal soll berechnet werden(zweischen 1 und 4) - sonst Rückgabwert leerer String
-////    return ""; // todo: druch korrekten Coden ersetzen
-//    public static String smartphoneHighestSale(int[][] zahlen, String[] phone){
-//        int temp=0;
-//    for(int j=0; j<zahlen[phone.length].length; j++){
-//        for(int i=0; i<phone.length; i++){
-//           if(zahlen[i][j]< zahlen[i+1][j]){
-//               temp=zahlen[i][j];
-//               zahlen[i+1][j]=zahlen[i][j];
-//                temp=zahlen[i+1][j];
-//            }
-//            return phone[i];
-//        }
-//
-//
-//    }
-//    }
-////
-//// }
-//// return
-//}
+
 
