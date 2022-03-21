@@ -1,4 +1,4 @@
-package fh.campus02;
+package fh.campus02.ProjectObject;
 
 public class Punkt {
     int x;

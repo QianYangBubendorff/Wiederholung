@@ -1,4 +1,4 @@
-package fh.campus02;
+package fh.campus02.ProjectObject;
 
 public class PinguinExample {
     public static void main(String[] args) {

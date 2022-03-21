@@ -1,6 +1,4 @@
-package fh.campus02;
-
-import java.net.PortUnreachableException;
+package fh.campus02.ProjectObject;
 
 public class FlaechenApp {
     public static void main(String[] args) {

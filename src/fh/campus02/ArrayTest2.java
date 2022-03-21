@@ -28,7 +28,8 @@ public class ArrayTest2 {
 
         System.out.println(verkaufteAnzahlJahr(smartphoneVerkaufszahlen, 2));
         System.out.println();
-        System.out.println(Arrays.toString(smartphoneHighestSale(smartphoneVerkaufszahlen,smartphoneNamen)));
+//        System.out.println(Arrays.toString(smartphoneHighestSale(smartphoneVerkaufszahlen,smartphoneNamen)));
+        System.out.println(bestSalePhone(smartphoneVerkaufszahlen, smartphoneNamen, 0));
     }
 
     //    the following method should return the annual sales of each smartphone model. Sales numbers are based on the double dimensional array. The index of the phone based on the array of smartphone name
@@ -54,22 +55,35 @@ public class ArrayTest2 {
 //    namen: unser verkaufszahlen
 //    quartalNr: für welches Quartal soll berechnet werden(zweischen 1 und 4) - sonst Rückgabwert leerer String
 //    return ""; // todo: druch korrekten Coden ersetzen
-    public static String[] smartphoneHighestSale(int[][] zahlen, String[] phone) {
-        int[] max = new int[phone.length];
-        String[] maxPhone = new String[zahlen[0].length];
+//    public static String[] smartphoneHighestSale(int[][] zahlen, String[] phone) {
+//        int[] max = new int[phone.length];
+//        String[] maxPhone = new String[zahlen[0].length];
+//        for (int j = 0; j < zahlen[j].length; j++) {
+//            for (int i = 0; i < phone.length; i++) {
+//                if (zahlen[i][j] > max[j]) {
+//                    max[j] = zahlen[i][j];
+//                    maxPhone[j] = phone[i];
+//                }
+//
+//            }
+//
+//
+//        }
+//        return maxPhone;
+//    }
+    public static String bestSalePhone(int[][] zahlen, String[] phoneName, int quarter) {
+        String bestSale = phoneName[0];
+        int temp = zahlen[0][0];
         for (int j = 0; j < zahlen[j].length; j++) {
-            for (int i = 0; i < phone.length; i++) {
-                if (zahlen[i][j] > max[j]) {
-                    max[j] = zahlen[i][j];
-                    maxPhone[j] = phone[i];
+            for (int i = 0; i < zahlen.length; i++) {
+                if (zahlen[i][j] > temp) {
+                    temp = zahlen[i][j];
+                    bestSale = phoneName[i];
                 }
-
             }
-
-
         }
-        return maxPhone;
+        return bestSale;
+
+
     }
 }
-
-
