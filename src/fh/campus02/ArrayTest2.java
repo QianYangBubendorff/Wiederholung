@@ -29,7 +29,7 @@ public class ArrayTest2 {
         System.out.println(verkaufteAnzahlJahr(smartphoneVerkaufszahlen, 2));
         System.out.println();
 //        System.out.println(Arrays.toString(smartphoneHighestSale(smartphoneVerkaufszahlen,smartphoneNamen)));
-        System.out.println(bestSalePhone(smartphoneVerkaufszahlen, smartphoneNamen, 0));
+        System.out.println(bestSalePhone(smartphoneVerkaufszahlen, smartphoneNamen, 1));
     }
 
     //    the following method should return the annual sales of each smartphone model. Sales numbers are based on the double dimensional array. The index of the phone based on the array of smartphone name
@@ -74,16 +74,15 @@ public class ArrayTest2 {
     public static String bestSalePhone(int[][] zahlen, String[] phoneName, int quarter) {
         String bestSale = phoneName[0];
         int temp = zahlen[0][0];
-        for (int j = 0; j < zahlen[j].length; j++) {
             for (int i = 0; i < zahlen.length; i++) {
+                int j = quarter-1;
                 if (zahlen[i][j] > temp) {
                     temp = zahlen[i][j];
                     bestSale = phoneName[i];
                 }
-            }
+            }return bestSale;
         }
-        return bestSale;
+
 
 
     }
-}
