@@ -3,7 +3,7 @@ package fh.campus02;
 
 import java.util.Arrays;
 
-public class ArrayTest2 {
+public class SmartphoneArray {
     public static void main(String[] args) {
 //        for loop to print a string array.
         String[] smartphoneNamen = {"Samsung A51", "iPhone 13", "Huawei 15", "Nokia 3210", "Xiaomi 7T"};
@@ -71,16 +71,24 @@ public class ArrayTest2 {
 //        }
 //        return maxPhone;
 //    }
+//    the column number is the quarter number minus one. We compare only the line value.
     public static String bestSalePhone(int[][] zahlen, String[] phoneName, int quarter) {
-        String bestSale = phoneName[0];
-        int temp = zahlen[0][0];
-            for (int i = 0; i < zahlen.length; i++) {
-                int j = quarter-1;
-                if (zahlen[i][j] > temp) {
-                    temp = zahlen[i][j];
-                    bestSale = phoneName[i];
+//        String bestSale = phoneName[0]; the output option 1
+//        either the biggest as minus 1, or the first number value.
+//        int biggest = -1;
+//        output option 2 use the index number of the phone array (indexBiggest).
+        int biggest= zahlen[0][quarter-1];
+        int indexBiggest=0;
+        if(quarter<1||quarter>4){
+            return "invalid quarter number";
+        }
+            for (int i = 1; i < zahlen.length; i++) {
+
+                if (zahlen[i][quarter-1] > biggest) {
+                    biggest = zahlen[i][quarter-1];
+                    indexBiggest=i;
                 }
-            }return bestSale;
+            }return phoneName[indexBiggest];
         }
 
 

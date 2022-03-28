@@ -27,5 +27,6 @@ public class ArrayTest {
                 tabelle[zeile][spalte] = 7;
             }
         }
+        System.out.println(Arrays.deepToString(tabelle));
     }
 }
